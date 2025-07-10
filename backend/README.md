@@ -38,8 +38,8 @@
 
 ### Update recipe
 
-#### @PATCH /api/recipes/:id
+#### @PATCH /api/recipes/:id (secure)
 
 ### Delete recipe
 
-#### @DELETE /api/recipes/:id
+#### @DELETE /api/recipes/:id (secure)

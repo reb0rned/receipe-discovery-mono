@@ -38,7 +38,10 @@ export class RecipesService {
 
   async findAll() {
     const recipes = await this.recipeRepository.find({
-      relations: ['author']
+      order: {
+        createdAt: 'DESC',
+      },
+      relations: ['author'],
     })
 
     return recipes
@@ -55,7 +58,8 @@ export class RecipesService {
 
   async findOne(recipeId: number) {
     const recipe = await this.recipeRepository.findOne({
-      where: { id: recipeId }
+      where: { id: recipeId },
+      relations: ['author']
     })
 
     if (!recipe) throw new NotFoundException(`Recipe with id ${recipeId} not found`);
