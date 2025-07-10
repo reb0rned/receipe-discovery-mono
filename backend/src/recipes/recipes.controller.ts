@@ -22,7 +22,7 @@ export class RecipesController {
     return this.recipesService.findAll();
   }
 
-  @Get()
+  @Get('user-recipes')
   @UseGuards(JwtAuthGuard)
   findAllByUser(
     @Request() req
